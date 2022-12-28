@@ -9,9 +9,23 @@ function validateForm() {
     alert("Please Enter Last Name");
     return false;
   }
-  let c = document.getElementById("email").value;
-  if (c==""){
-    alert("Please Enter Email");
+  var str = document.myform.email.value;
+	var len=str.length;
+	var atcount=0;
+	var atpos;
+  if ((document.myform.email.value=="")){
+    alert("Please provide your email id!");
+    document.myform.email.focus();
+    return true;
+  }
+  if (atcount!=1 || str[len-1]=='.'|| str[len-2]=='.' || str[atpos+1]=="."){
+    alert("Please Valid your email id!");
+    document.myform.email.focus();
+    return true;
+  }
+  if(document.myform.phone.value.length!=10 || isNaN(document.myform.phone.value)){
+    alert("Please provide a valid Phone phone!");
+    document.myform.phone.focus();
     return false;
   }
   let d = document.getElementById("phone").value;
@@ -24,27 +38,11 @@ function validateForm() {
     alert ( "Please choose your Gender: Male or Female" );
     return false;
   }
-  var e = document.getElementById("dob_month");
-  var strUser = e.options[e.selectedIndex].value;
-  if(strUser==0) 
-  {
-    alert("Please select a month from options");
-    return false;
-  }
-  var f = document.getElementById("dob_day");
-  var strUser1 = f.options[f.selectedIndex].value;
-  if(strUser1==0)
-  {
-    alert("Please select a day from options");
-    return false;
-  }
-  var g = document.getElementById("dob_year");
-  var strUser2 = g.options[g.selectedIndex].value;
-  if(strUser2==0) 
-  {
-    alert("Please select a year from options");
-    return false;
-  }
+  let f = document.getElementById('dob').value;
+    if(f== ""){
+      alert("Please select your date of birth");
+      return false;
+    }
   let h = document.getElementById("address").value;
     if (h==""){
     alert("Please Enter Address");
@@ -70,14 +68,14 @@ function validateForm() {
         alert ( "Please check atleast one of your hobbies " );
         return false;
     }
-  if (( document.myform.highschool.checked == false ) && (document.myform.higherschool.checked == false) && (document.myform.bachelors.checked == false) &&(document.myform.masters.checked == false) && (document.myform.phd.checked == false) && (document.myform.hobby6.checked ==false))
+  var e = document.getElementById("qualification");
+    var strUser = e.options[e.selectedIndex].value;
+    if(strUser==0) 
     {
-        alert ( "Please check your qualification" );
-        return false;
+      alert("Please select your qualification");
+      return false;
     }
-    if (( document.myform.bca.checked == false ) && (document.myform.bcom.checked == false) && (document.myform.bsc.checked == false) &&(document.myform.ba.checked == false) && (document.myform.mca.checked == false) && (document.myform.mcom.checked ==false) && (document.myform.msc.checked == false) && (document.myform.ma.checked ==false))
-    {
-        alert ( "Please check your interested course" );
-        return false;
-    }
+    
+    return true
+    
 }
