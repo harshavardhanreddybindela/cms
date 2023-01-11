@@ -3,8 +3,10 @@
 <body bgcolor="#ffffe5">
 <head>
 	<script src="validation.js"></script>
-
 </head>
+<?php
+ include("menu.php");
+?>
 <h1 align="middle">Student Register Form</h1>
 
 <form method="post" action="insertstudent.php" name="myform" onsubmit="return validateForm()">
@@ -27,6 +29,30 @@
 <tr>
   <td><label for="phone">Phone No.:</label></td>
   <td><input type="tel" id="phone" name="phone"></td>
+</tr>
+<tr>
+<td>
+<label for="branches">Branch:</label>
+<td><select type="option" name="branches" id="branches">
+	<option value="select">-select-</option>
+	<option value="cse">CSE</option>
+	<option value="ece">ECE</option>
+	<option value="it">IT</option>
+	<option value="civil">CIVIL</option>
+	<option value="mechanical">MECHANICAL</option>
+</select></td>
+</tr>
+<tr>
+<td>
+<label for="Qualification">Qualification:</label>
+<td><select type="option" name="qualification" id="qualification">
+	<option value="select">-select-</option>
+	<option value="highschool">Highschool</option>
+	<option value="higherschool">Higherschool</option>
+	<option value="bachelors">Bachelors</option>
+	<option value="masters">Masters</option>
+	<option value="phd">Phd</option>
+</select></td>
 </tr>
 <tr>
   <td><label for="gender">Gender:</label></td>
@@ -63,29 +89,12 @@
 <label for="hobby"> Singing</label></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="hobby3" name="hobbies[]" value="dancing">
+<td><input type="checkbox" id="dancing" name="hobbies[]" value="dancing">
 <label for="hobby"> Dancing</label></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="hobby4" name="hobbies[]" value="sketching">
+<td><input type="checkbox" id="sketching" name="hobbies[]" value="sketching">
 <label for="hobby"> Sketching</label></td>
-</tr>
-<tr>
-<td><input type="checkbox" id="hobby5" value="Other">
-<label for="hobby"> Other</label></td>
-<td><input type="text" id="hobby6" name="hobby[]" placeholder="ex:cooking" value=""></td>
-</tr>
-<tr>
-<td>
-<label for="Qualification">Qualification:</label>
-<td><select type="option" name="qualification" id="qualification">
-	<option value="0">-select-</option>
-	<option value="1">Highschool</option>
-	<option value="2">Higherschool</option>
-	<option value="3">Bachelors</option>
-	<option value="4">Masters</option>
-	<option value="5">Phd</option>
-</select></td>
 </tr>
 <tr align="middle">
 	<td><input type="submit" value="Submit" name="submit"></td>
@@ -95,5 +104,6 @@
 </table>
 </fieldset>
 </form>
+
 </body>
 </html>

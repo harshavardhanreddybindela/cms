@@ -19,20 +19,6 @@ function validateForm() {
     alert("Please Enter Phone number");
     return false;
   }
-  var l= document.getElementById("branch");
-  var strUser1= l.options[l.selectedIndex].value;
-  if(strUser1==0){
-   alert("Please select your branch");
-   return false;
-  }
-  var e = document.getElementById("qualification");
-  var strUser = e.options[e.selectedIndex].value;
-  if(strUser==0) 
-  {
-    alert("Please select your qualification");
-    return false;
-  }
-
   if ( ( myform.gender[0].checked == false ) && ( myform.gender[1].checked == false ) )
   {
     alert ( "Please choose your Gender: Male or Female" );
@@ -60,7 +46,7 @@ function validateForm() {
   }
   let k = document.getElementById("country").value;
     if (k==""){
-    alert("Please Enter country");
+    alert("Please Enter pincode");
     return false;
   }
   if (( document.myform.hobby1.checked == false ) &&  (document.myform.hobby2.checked == false) &&  (document.myform.hobby3.checked == false) && (document.myform.hobby4.checked == false) &&  (document.myform.hobby5.checked == false) && (document.myform.hobby6.checked ==false))
@@ -68,5 +54,16 @@ function validateForm() {
         alert ( "Please check atleast one of your hobbies " );
         return false;
     }
-
+  var e = document.getElementById("qualification");
+    var strUser = e.options[e.selectedIndex].value;
+    if(strUser==0) 
+    {
+      alert("Please select your qualification");
+      return false;
+    }
+    if (( document.myform.bca.checked == false ) && (document.myform.bcom.checked == false) && (document.myform.bsc.checked == false) &&(document.myform.ba.checked == false) && (document.myform.mca.checked == false) && (document.myform.mcom.checked ==false) && (document.myform.msc.checked == false) && (document.myform.ma.checked ==false))
+    {
+        alert ( "Please check your interested course" );
+        return false;
+    }
 }
